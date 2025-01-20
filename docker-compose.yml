@@ -1,0 +1,46 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:9105
+
+  backend:
+    build: ./backend
+    ports:
+      - "9105:9105"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=db
+      - DB_USER=shawn
+      - DB_PASSWORD=UMAlumniHub2024
+      - DB_NAME=alumni_hub
+      - DB_PORT=5432
+      - DATABASE_URL=postgresql://shawn:UMAlumniHub2024@db:5432/alumni_hub?sslmode=disable
+
+  db:
+    image: postgres:17
+    command: postgres -c listen_addresses='*'
+    environment:
+      - POSTGRES_USER=shawn
+      - POSTGRES_PASSWORD=UMAlumniHub2024
+      - POSTGRES_DB=alumni_hub
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - /opt/homebrew/var/postgresql@17:/var/lib/postgresql/data
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U shawn -d alumni_hub"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
