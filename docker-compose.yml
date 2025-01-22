@@ -44,3 +44,5 @@ services:
 
 volumes:
   postgres_data:
+
+# the repository (frontend + backend) link: https://github.com/ohmyzshuo/containerized-alumni-hub

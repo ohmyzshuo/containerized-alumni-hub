@@ -1,0 +1,32 @@
+const faculties = {
+    1: 'Other/Not Specified',
+    2: 'Test Faculty 1',
+    3: 'Institute For Advanced Studies (IAS)',
+    4: 'Test Faculty 2',
+    5: 'Academy Of Islamic Studies',
+    6: 'Academy Of Malay Studies',
+    7: 'Faculty Of Built Environment',
+    8: 'Faculty Of Languages And Linguistics',
+    9: 'Faculty Of Pharmacy',
+    10: 'Faculty Of Engineering',
+    11: 'Faculty Of Education',
+    12: 'Faculty Of Dentistry',
+    13: 'Faculty Of Business And Economics',
+    14: 'Faculty Of Medicine',
+    15: 'Faculty Of Science',
+    16: 'Faculty Of Computer Science And Information Technology',
+    17: 'Faculty Of Arts And Social Sciences',
+    18: 'Faculty Of Creative Arts',
+    19: 'Faculty Of Law',
+    20: 'Faculty Of Sport & Exercise Sciences',
+    21: 'Academic Enhancement & Leadership Development Centre (ADEC)',
+    22: 'Centre For Internship Training And Academic Enrichment (CITrA)',
+    23: 'Universiti Malaya Centre For Continuing Education (UMCCed)',
+    24: 'Centre For Foundation Studies',
+    25: 'Centre For Civilisational Dialogue',
+    26: 'Asia-Europe Institute',
+    27: 'International Institute Of Public Policy And Management',
+    28: 'Institute Of China Studies'
+};
+
+export default faculties;
